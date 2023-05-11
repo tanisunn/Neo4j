@@ -1,22 +1,27 @@
+// Cập nhật giá trị properties của Node
 MATCH (n) 
-WHERE ID(n) = 3
-SET n.age = 24, n.height = 2.02
+WHERE ID(n) = 10
+SET n.height = 2.08
 RETURN n
 
+// Cập nhật lable mới
 MATCH (lebron)
 WHERE ID(n) = 3
 SET lebron:REF
 RETURN lebron
 
+// Cập nhật giá trị properties của Relationship
 MATCH (lebron {name: "LeBron James"}) - [contract:PLAYS_FOR] -> (:TEAM)
 SET contract.salary = 60000000
 
-MATCH (lebron)
-WHERE ID(n) = 3
-REMOVE lebron:REF
-RETURN lebron
+// Xóa Lable
+MATCH (n)
+WHERE ID(n) = 10
+REMOVE n:REF
+RETURN 
 
-MATCH (lebron)
-WHERE ID(n) = 3
-REMOVE lebron.age
-RETURN lebron
+// Xóa giá trị properties của Node
+MATCH (n)
+WHERE ID(n) = 10
+REMOVE n.height
+RETURN n
