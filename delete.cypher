@@ -1,11 +1,11 @@
-// Deleting a Node (Not going to work)
+// Xóa Node : cách sai do vướng relationships liên quan
 MATCH(ja {name: "Ja Morant"})
 DELETE ja
 
-// Delete node and relationships
+// Xóa node và relationships
 MATCH(ja {name: "Ja Morant"})
 DETACH DELETE ja
 
-// Delete relationship
+// Xóa relationship
 MATCH(joel {name: "Joel Embiid"}) - [rel:PLAYS_FOR] -> (:TEAM)
 DELETE rel
