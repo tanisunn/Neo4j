@@ -60,11 +60,9 @@ SKIP 1
 ORDER BY player.height DESC
 LIMIT 3
 
-
 // Truy vấn nhiều  nodes
 MATCH (coach:COACH), (player:PLAYER)
 RETURN coach, player
-
 
 ////////////////////////////////////////////////////////////
 // ============== Querying Relationships ================ //
@@ -102,7 +100,6 @@ RETURN player.name, COUNT(gamePlayed)
 //  Trả về tất cả players và trung bình điểm  trận đấu tham gia //
 MATCH (player:PLAYER) - [gamePlayed:PLAYED_AGAINST] - (team:TEAM)
 RETURN player.name, AVG(gamePlayed.points)
-
 
 // Trả về player có điểm TB cao nhất của  LAKERS //
 MATCH (player:PLAYER) - [:PLAYS_FOR] - (:TEAM {name: "LA Lakers"})
