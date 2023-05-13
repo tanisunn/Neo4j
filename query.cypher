@@ -56,8 +56,8 @@ LIMIT 3
 MATCH (player:PLAYER) 
 WHERE player.height >= 2
 RETURN player
-SKIP 1
 ORDER BY player.height DESC
+SKIP 1
 LIMIT 3
 
 // Truy vấn nhiều  nodes
